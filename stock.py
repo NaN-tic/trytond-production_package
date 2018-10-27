@@ -4,10 +4,9 @@ from trytond.pool import PoolMeta
 from trytond.pyson import Eval
 
 __all__ = ['Package', 'Move', 'Production', 'ShipmentOut']
-__metaclass__ = PoolMeta
 
 
-class Package:
+class Package(metaclass=PoolMeta):
     __name__ = 'stock.package'
 
     @classmethod
@@ -23,7 +22,7 @@ class Package:
                 cls.moves.add_remove.append(value)
 
 
-class Move:
+class Move(metaclass=PoolMeta):
     __name__ = 'stock.move'
 
     @classmethod
@@ -36,7 +35,7 @@ class Move:
                 })
 
 
-class Production:
+class Production(metaclass=PoolMeta):
     __name__ = 'production'
 
     @classmethod
@@ -49,7 +48,7 @@ class Production:
                 })
 
 
-class ShipmentOut:
+class ShipmentOut(metaclass=PoolMeta):
     __name__ = 'stock.shipment.out'
 
     @classmethod
