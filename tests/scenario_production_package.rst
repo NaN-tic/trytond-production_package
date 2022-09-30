@@ -175,6 +175,7 @@ Make a pre-packaged shipment of the produced products::
     >>> move.to_location = customer_loc
     >>> move.company = company
     >>> move.unit_price = Decimal('1')
+    >>> move.currency = company.currency
     >>> shipment_out.save()
     >>> ShipmentOut.wait([shipment_out.id], config.context)
     >>> shipment_out.reload()
